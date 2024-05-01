@@ -1,0 +1,65 @@
+// @import 'entradas';
+@mixin entradas(){
+    padding: 8px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+// @import 'botao_login';
+@mixin botao_login(){
+    // margin-left: 100px;
+    padding: 8px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+// @import 'centro';
+@mixin centro(){
+    display: grid;
+    place-items: center;
+    margin-top: 10%;
+}
+
+$fonts: Arial, sans-serif;
+
+
+body {
+    font-family: $fonts;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+#login_form {
+    @include centro();
+}
+
+.input{
+    @include entradas();
+    width: 165px;
+}
+
+.botao {
+    @include botao_login();
+    margin-left:50px;
+}
+
+.botao:hover{
+    background-color: #114a13;
+}
+
+.botao_cadastrar {
+    @include botao_login();
+    margin-left: 20px;
+}
+
+.botao_cadastrar:hover{
+    background-color: #114a13;
+}
+
+.botao_cadastrar a{
+    text-decoration: none;
+    color: white;
+}

@@ -1,7 +1,12 @@
 <?php
-include('conexao.php');
+require('configs\conexao.php');
+require('login.html');
 
-if(isset($_POST['email']) || isset($_POST['senha'])) {
+
+// $botao_cadastrar = $_POST['botao_cadastrar'];
+// $botao_cadastrar = 'cadastro/cadastro.php';
+
+if(isset($_POST['email']) || isset($_POST['senha'])) { // verifica cm o “isset” se email ou senha estao vazios
         
     if(strlen($_POST['email']) == 0){ //verifica o numero de caracteres cm o strlean
         echo "preencha seu email";
@@ -29,7 +34,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
             $_SESSION['id'] = $usuario['id'];
             $_SESSION['nome'] = $usuario['nome'];
 
-            header("Location: painel.php");
+            header("Location:configs/painel.php");
 
         } else {
             echo"Falha ao logar! E-mail ou senha incorretos";
@@ -37,35 +42,3 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
     }
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Login</title>
-</head>
-<body>
-    <div id="login_form">
-        <h1>Acesse sua conta</h1>
-        <form action="" method="POST">
-        <div class="email">
-            <p>  
-                <label>E-mail</label>
-                <input type="text" name="email">
-            </p>
-        </div>  
-        <div class="senha">
-            <p>    
-                <label>Senha</label>
-                <input type="password" name="senha">
-            </p> 
-        </div> 
-        <p>
-            <button class="botao" type="submit">Entrar</button>
-        </p>
-        </form>
-    </div>
-</body>
-</html>

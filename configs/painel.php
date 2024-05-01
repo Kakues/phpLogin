@@ -1,5 +1,9 @@
 <?php
- include('protect.php');
+
+ if(!isset($_SESSION)){
+    session_start();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +18,7 @@
 
     <p>
 
-    <a href="logout.php">Sair<p>
+    <a href="../configs/logout.php">Sair<p>
 
     </p>
 </body>

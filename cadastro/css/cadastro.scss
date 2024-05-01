@@ -7,7 +7,7 @@
 }
 // @import 'botao_login';
 @mixin botao_login(){
-    margin-left: 100px;
+    // margin-left: 100px;
     padding: 8px 15px;
     background-color: #4caf50;
     color: white;
@@ -19,7 +19,7 @@
 @mixin centro(){
     display: grid;
     place-items: center;
-    margin-top: calc(100% - 85%);
+    margin-top: 10%;
 }
 
 $fonts: Arial, sans-serif;
@@ -36,18 +36,38 @@ body {
     @include centro();
 }
 
+form{
+    width: 353px;
+}
+
 .botao {
     @include botao_login();
+    margin-left: 165px;
+    text-decoration: none;
 }
 
 .botao:hover{
     background-color: #114a13;
 }
 
-input[type="text"] {
+.input{
     @include entradas();
+    width: 165px;
 }
 
-input[type="password"] {
-    @include entradas();
+#nome{
+    margin-left: 36px;
+}
+
+#email{
+    margin-left: 35px;
+}
+
+
+#senha{
+    margin-left: 35px;
+}
+
+#senha_confirm{
+    margin-left: 0px;
 }
